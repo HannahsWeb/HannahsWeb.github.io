@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+  <style>
+  body, p, li, h1 {
+font-family: Perpetua,Baskerville,Big Caslon,Palatino Linotype,Palatino,URW Palladio L,Nimbus Roman No9 L,serif !important; 
+}
+p {font-size: 25px;}
+#Options div {
+  display: block;
+  border: 1px solid #AFD275;
+  border-radius: 3px;
+  margin: 10px;
+  padding: 14px;  
+}
+#Details li span {
+  color: #AFD275;
+}
+#Details li {
+  font-size: 2em;
+}
+h1 {margin-top: 10px !important;
+font-size: 20px;  }
+#Options div.selectedOne {
+  background-color: #d7e9ba;
+  border: 4px solid #AFD275;
+}
+#Options div h1 {display: inline;
+ font-family: Perpetua,Baskerville,Big Caslon,Palatino Linotype,Palatino,URW Palladio L,Nimbus Roman No9 L,serif !important;
+  font-size: 2.1em;
+}
+#Options div p {
+  float: right;
+  text-align: center;
+  font-size: 1.1em;
+  
+}
+.basic, .better, .best {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+#Details div{
+  display:none;
+}
+#Details .selectedOne {
+  display: block;
+}
+  </style>
+</head>
+<body>
+  <div class="row"><div class="col-xs-12" style="text-align: center"><h1>Web Services by Hannah</h1>
+    <p>Upwork's finest! See which option is best for you! We offer packages for all price levels and feature requirements</p>
+    </div></div>
+  <div class="row">
+  <div id="Options" class="col-xs-12 col-md-5 ">
+    <div class="basic selectedOne"><h1>Basic</h1><p>From <br>
+      <strong>$99.99</strong></p></div>
+    <div class="better"><h1>Better</h1><p>From <br><strong>$199.99</strong></p></div>
+    <div class="best"><h1>Best</h1><p>From <br><strong>$299.99</strong></p></div>
+    
+  </div>
+  <div id="Details" class="col-xs-12 col-md-7">
+    <div class="basic selectedOne"><ul class="fa-ul"><li><span class="fa-li"><i class="fas fa-check-square"></i></span>Excellent service</li><li><span class="fa-li"><i class="fas fa-check-square"></i></span>Project tailor made to your specifications</li><li><span class="fa-li"><li><span class="fa-li"><i class="fas fa-check-square"></i></span>Up to 3 hours worth of work</li></ul></div>
+    <div class="better"><ul class="fa-ul"><li><span class="fa-li"><i class="fas fa-check-square"></i></span>Excellent service</li><li><span class="fa-li"><i class="fas fa-check-square"></i></span>Project tailor made to your specifications</li><li><span class="fa-li"><i class="fas fa-check-square"></i></span>Up to 6 hours worth of work</li><li><span class="fa-li"><i class="fas fa-check-square"></i></span>3 Revisions</li></ul></div>
+    <div class="best"><ul class="fa-ul"><li><span class="fa-li"><i class="fas fa-check-square"></i></span>Excellent service</li><li><span class="fa-li"><i class="fas fa-check-square"></i></span>Project tailor made to your specifications</li><li><span class="fa-li"><i class="fas fa-check-square"></i></span>Up to 9 hours worth of work</li><li><span class="fa-li"><i class="fas fa-check-square"></i></span>3 Revisions</li><li><span class="fa-li"><i class="fas fa-check-square"></i></span>Follow up training session</li></ul></div>
+  </div>
+    </div>
+    
+   
+<script>
+// Add active class to the current button (highlight it)
+var header = document.getElementById("Options");
+var btns = header.getElementsByTagName("div");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("selectedOne");
+    current[0].className = current[0].className.replace(" selectedOne", "");
+    this.className += " selectedOne";
+  });
+}
+</script>
+</body>
+</html>
