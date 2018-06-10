@@ -1,0 +1,346 @@
+<html>
+<head>
+<style>
+nav {
+  background: rgba(255,255,255, .95);
+  padding: 10px 0;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0 0 0 0;
+  margin: 0 1.5rem 0 200px;
+  font: 1rem "Montserrat";
+  color: #79c;
+  position: relative;
+}
+
+a {
+  white-space: nowrap;
+  color: #79c;
+  text-decoration: none;
+}
+
+nav label {
+  font-size: 0;
+  display: block;
+  position: absolute;
+  display: none;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform .5s;
+  right: .5rem;
+}
+
+nav input {
+  display: none;
+}
+
+nav label:before {
+  content: "\22ee";
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #79c; 
+}
+
+ul:after { 
+  content: "";
+  display: block; 
+  width: 12em;
+  position: absolute;
+  top: 100%;
+  z-index: -1;
+  background: rgba(255,255,255, .95);
+}
+
+nav :checked ~ label {
+  transform: translateY(-50%) rotateZ(-90deg)
+}
+
+
+nav  ul:after {
+  right: -25rem;
+  transition: right .5s;
+}
+
+nav :checked ~ ul:after {
+  right: -1.5rem;
+}
+
+nav  ul li {
+   right: -25em;
+   transition: right .5s;
+}
+
+nav :checked ~ ul li {
+   right: 0;
+}
+
+@media all and (max-width: 880px) {
+  nav label {
+     display: block; 
+     cursor: pointer;
+  }
+  
+  ul:after {
+     height: 2.3rem;
+  }
+
+  li:nth-last-child(1) {
+    color: #79c;
+    position: absolute;
+    top: 100%;
+    padding-top: .75rem;
+    padding-right: 1em;
+  }
+}
+
+
+
+@media all and (max-width: 770px) {
+  ul:after {
+     height: 4.4rem;
+  }
+  
+  li:nth-last-child(-n+2) {
+    color: #79c;
+    position: absolute;
+    top: 100%;
+    padding-top: 1rem;
+    display: block;
+    padding-right: 1em;
+  }
+  li:nth-last-child(1):before {
+    content : "\A";
+    font-size: 1.5rem;
+    display: block;
+    white-space: pre;
+  }
+}
+
+@media all and (max-width: 650px) {
+  ul:after {
+     height: 6.5rem;
+  }
+  
+  li:nth-last-child(-n+3) {
+    color: #79c;
+    position: absolute;
+    top: 100%;
+    padding-top: 1rem;
+    display: block;
+    padding-right: 1em;
+  }
+  li:nth-last-child(2):before {
+    content : "\A";
+    font-size: 1.5rem;
+    display: block;
+    white-space: pre;
+  }
+  li:nth-last-child(1):before {
+    content : "\A\A";
+    font-size: 1.5rem;
+    display: block;
+    white-space: pre;
+  }
+   
+ 
+}
+
+
+
+
+
+@media all and (max-width: 530px) {
+  ul:after {
+     height: 8.6rem;
+  }
+  
+  li:nth-last-child(-n+4) {
+    color: #79c;
+    position: absolute;
+    top: 100%;
+    padding-top: 1rem;
+    display: block;
+    padding-right: 1em;
+  }
+  li:nth-last-child(3):before {
+    content : "\A";
+    font-size: 1.5rem;
+    display: block;
+    white-space: pre;
+  }
+  li:nth-last-child(2):before {
+    content : "\A\A";
+    font-size: 1.5rem;
+    display: block;
+    white-space: pre;
+  }
+  li:nth-last-child(1):before {
+    content : "\A\A\A";
+    font-size: 1.5rem;
+    display: block;
+    white-space: pre;
+  }
+   
+ 
+}
+
+
+@media all and (max-width: 440px) {
+  ul:after {
+     height: 10.8rem;
+  }
+  
+  li:nth-last-child(-n+5) {
+    color: #79c;
+    position: absolute;
+    top: 100%;
+    padding-top: 1rem;
+    display: block;
+    padding-right: 1em;
+  }
+  li:nth-last-child(4):before {
+    content : "\A";
+    font-size: 1.5rem;
+    display: block;
+    white-space: pre;
+  }
+  li:nth-last-child(3):before {
+    content : "\A\A";
+    font-size: 1.5rem;
+    display: block;
+    white-space: pre;
+  }
+  li:nth-last-child(2):before {
+    content : "\A\A\A";
+    font-size: 1.5rem;
+    display: block;
+    white-space: pre;
+  }
+  li:nth-last-child(1):before {
+    content : "\A\A\A\A";
+    font-size: 1.5rem;
+    display: block;
+    white-space: pre;
+  }
+   
+ 
+}
+
+@media all and (max-width: 380px) {
+  nav {
+    border-top: 10px #fff solid;
+    border-bottom: 10px #fff solid;
+  }
+  
+  ul:after {
+     height: 15.4rem;
+  }
+  
+  li:nth-last-child(-n+7) {
+    color: #79c;
+    position: absolute;
+    top: 100%;
+    padding-top: 1rem;
+    display: block;
+    padding-right: 1em;
+  }
+  li:nth-last-child(6):before {
+    content : "\A";
+    font-size: 1.5rem;
+    display: block;
+    white-space: pre;
+  }
+  li:nth-last-child(5):before {
+    content : "\A\A";
+    font-size: 1.5rem;
+    display: block;
+    white-space: pre;
+  }
+  li:nth-last-child(4):before {
+    content : "\A\A\A";
+    font-size: 1.5rem;
+    display: block;
+    white-space: pre;
+  }
+  li:nth-last-child(3):before {
+    content : "\A\A\A\A";
+    font-size: 1.5rem;
+    display: block;
+    white-space: pre;
+  }
+  li:nth-last-child(2):before {
+    content : "\A\A\A\A\A";
+    font-size: 1.5rem;
+    display: block;
+    white-space: pre;
+  }
+  li:nth-last-child(1):before {
+    content : "\A\A\A\A\A\A";
+    font-size: 1.5rem;
+    display: block;
+    white-space: pre;
+  }
+   
+ 
+}
+
+
+html, body {margin: 0; padding: 0;}
+body {
+  background: #f1f3f9;
+  overflow-x: hidden;
+  padding-top: 3rem;
+}
+
+main p {
+  font:.9rem/2 "Montserrat";
+  margin: 2rem;  
+  color: #84889C;
+}
+
+main u { color: #37393b; }
+</style></head>
+<body>
+<nav>
+  <input type="checkbox" id="menuopen" />
+  <label for="menuopen" aria-hidden="true">Menu</label>
+  <ul> 
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Apparel<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">T-Shirts </a><a class="dropdown-item" href="#">Outerwear </a><a class="dropdown-item" href="#">Sweatshirts </a><a class="dropdown-item" href="#">Hats and Beanies </a><a class="dropdown-item" href="#">Golf and Polo Shirts </a><a class="dropdown-item" href="#">Dress Shirts </a></div></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Automotive Items<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Ice Scrapers </a><a class="dropdown-item" href="#">Car Emergency Kits </a><a class="dropdown-item" href="#">Sun Shades </a></div></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bags<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Tote Bags </a><a class="dropdown-item" href="#">Backpacks </a><a class="dropdown-item" href="#">Duffle and Gym </a><a class="dropdown-item" href="#">Plastic & Vinyl </a><a class="dropdown-item" href="#">Paper Bags </a><a class="dropdown-item" href="#">Briefcases </a></div></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Banners, Mats &amp; Signs<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Banners </a><a class="dropdown-item" href="#">Yard Signs </a><a class="dropdown-item" href="#">Table Covers </a></div></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Buttons &amp; Stickers<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Bumper Stickers </a><a class="dropdown-item" href="#">Buttons </a><a class="dropdown-item" href="#">Decals </a></div></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clocks &amp; Watches<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Clocks </a><a class="dropdown-item" href="#">Watches </a><a class="dropdown-item" href="#">Stopwatch & Timer </a></div></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Corporate Gifts<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Awards </a><a class="dropdown-item" href="#">Tech Gifts </a><a class="dropdown-item" href="#">Food Gifts </a></div></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Desktop &amp; Office Items<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Calendars </a><a class="dropdown-item" href="#">Office Clips </a><a class="dropdown-item" href="#">Sticky Notes and Flags </a></div></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Drinkware<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Water Bottles </a><a class="dropdown-item" href="#">Koozies </a><a class="dropdown-item" href="#">Plastic Stadium Cups </a></div></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Electronics &amp; Computer Items<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Cell Phone and Tablet </a><a class="dropdown-item" href="#">Portable Chargers </a><a class="dropdown-item" href="#">Headphones </a></div></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fans<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Paper Hand Fans </a><a class="dropdown-item" href="#">Plastic Hand Fans </a><a class="dropdown-item" href="#">Electric Fans </a></div></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Flashlights, Knives &amp; Tools<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Tape Measures </a><a class="dropdown-item" href="#">Flashlights </a><a class="dropdown-item" href="#">Lighters </a></div></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Food &amp; Drink<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Candy </a><a class="dropdown-item" href="#">Bottled Water </a><a class="dropdown-item" href="#">Mints </a></div></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Golf Products<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Golf Towels </a><a class="dropdown-item" href="#">Golf Divot Tools </a><a class="dropdown-item" href="#">Golf Balls </a></div></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Household Items<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Wine Openers </a><a class="dropdown-item" href="#">Photo Frames </a><a class="dropdown-item" href="#">Kitchen Accessories </a></div></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Journals, Organizers &amp; Portfolios<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Notebooks </a><a class="dropdown-item" href="#">Folders </a><a class="dropdown-item" href="#">Portfolios </a></div></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Keychains &amp; Key Tags<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Flashlight </a><a class="dropdown-item" href="#">Stress Reliever </a><a class="dropdown-item" href="#">Carabiner </a></div></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lanyards, Badges &amp; Bracelets<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Lanyards </a><a class="dropdown-item" href="#">Badge Holders </a><a class="dropdown-item" href="#">Badge Reels </a></div></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Magnets<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Car and Outdoor </a><a class="dropdown-item" href="#">Business Card </a><a class="dropdown-item" href="#">Custom Cut </a></div></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Notepads<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Adhesive </a><a class="dropdown-item" href="#">Note Cubes </a><a class="dropdown-item" href="#">Non-Adhesive </a></div></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Outdoor &amp; Sporting Goods<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Coolers </a><a class="dropdown-item" href="#">Umbrellas </a><a class="dropdown-item" href="#">Sunglasses </a></div></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Party Supplies, Toys &amp; Games<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Poker Chips </a><a class="dropdown-item" href="#">Balloons </a><a class="dropdown-item" href="#">Temporary Tattoos </a></div></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">School &amp; Spirit Items<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Pennants </a><a class="dropdown-item" href="#">Spirit Towels </a><a class="dropdown-item" href="#">Seat Cushions </a></div></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Stress Balls<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Round and Shaped </a><a class="dropdown-item" href="#">Sport and Outdoor </a><a class="dropdown-item" href="#">Patriotic and State </a></div></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Travel &amp; Personal Care Items<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">First Aid Kits </a><a class="dropdown-item" href="#">Hand Sanitizer </a><a class="dropdown-item" href="#">Lip Balm </a></div></li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Writing Instruments<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Pens </a><a class="dropdown-item" href="#">Stylus Pens </a><a class="dropdown-item" href="#">Pencils </a><a class="dropdown-item" href="#"><a class="dropdown-item" href="#"><a class="dropdown-item" href="#"></div></li>
+  </ul> 
+</nav>
+</body>
+</html>
