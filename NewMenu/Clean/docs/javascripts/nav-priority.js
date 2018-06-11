@@ -330,13 +330,13 @@ var BreakpointSwitcher = (function(window, Util, matchMedia, document, undefined
   // Default configuration
   NavPriority.DEFAULTS = {
     // Dropdown menu properties
-    dropdownLabel: 'More <i class="caret"></i>',
-    dropdownMenuClass: 'dropdown-menu dropdown-menu-right',
+    dropdownLabel: 'More',
+    dropdownMenuClass: 'dropdown-menu dropdown-menu-right Hmoremenu1',
     dropdownMenuTemplate: '<li data-nav-priority-menu class="navbar-nav-more dropdown" aria-hidden="true">' +
-        '<a id="{{dropdownMenuId}}" href="#" class="navbar-toggle-more" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-nav-priority-toggle>' +
+        '<a id="{{dropdownMenuId}}" class="navbar-toggle-more collapsed" data-toggle="collapse" href="#moreMenuCollapse" role="button" aria-expanded="false" aria-controls="cmoreMenuCollapse" data-nav-priority-toggle>' +
           '{{dropdownLabel}}' +
         '</a>' +
-        '<ul class="{{dropdownMenuClass}}" aria-labelledby="{{dropdownMenuId}}"></ul>' +
+        '<ul class="{{dropdownMenuClass}} collapse" aria-labelledby="{{dropdownMenuId}}" id="moreMenuCollapse"></ul>' +
       '</li>',
     containerSelector: 'ul',
     containerWidthOffset: 10,
