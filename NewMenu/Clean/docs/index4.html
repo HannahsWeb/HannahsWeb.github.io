@@ -69,19 +69,15 @@
     margin-top: -1px;
    }
    
-   @media (min-width: 769px) {
-     .dropdown:hover > .dropdown-menu {
+  @media (min-width: 769px) {
+   /*  .dropdown:hover > .dropdown-menu {
     display: block;
   }
    .navbar-nav-more.dropdown:hover  div.dropdown-menu {
     display: none;
   }
   
-   .navbar-nav-more.dropdown:hover  ul {
-    padding-left: 50%;
-	padding-right: 50%;
-  }
-   .dropdown:hover > .dropdown-menu {
+   .navbar-nav-more.dropdown:hover.dropdown:hover > .dropdown-menu {
     display: block;
   }
   
@@ -89,12 +85,22 @@
    .dropdown:hover li.open div.dropdown-menu {
     display: block;
 	position: static;
-  }
+  }*/
   
   .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
     background-color: #2F4E71;
 }
   
+  .dropdown:hover div.dropdown-menu {
+  display: block;
+  }
+   .navbar-nav-more .dropdown:hover div.dropdown-menu {
+  display: none;
+  }
+  
+   .navbar-nav-more.dropdown:hover div.dropdown-menu {
+  display: none;
+  }
   
   }
 	</style>
@@ -118,6 +124,7 @@
 <div id="navbar-priority-2">
   <div>
     <nav class="sw-example-menu" data-nav="priority-2">
+	
 	<div class="navbar-header">
                 <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9" aria-expanded="false" style="color: white; font-weight: bold;"><span class="sr-only">Toggle navigation</span><span style="display:inline-block">MENU &nbsp;</span><span style="display:inline-block"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></span></button>
 	</div>
