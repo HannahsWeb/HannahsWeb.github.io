@@ -1,0 +1,993 @@
+<html>
+<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <link rel="stylesheet" href="nav-priority.css">
+  <style>
+	
+/*
+	AUTHOR: Osvaldas Valutis, www.osvaldas.info
+*/
+
+
+
+/* general */
+
+*,
+h1, /* see normalize.css */
+figure /* see normalize.css */
+{
+	font-size: 100%;
+	font-family: inherit;
+	font-weight: inherit;
+	font-style: inherit;
+	line-height: inherit;
+	vertical-align: baseline;
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+
+
+/* box sizing */
+
+*,
+*::before,
+*::after,
+input[type='search'] /* see normalize.css */
+{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+
+/* font smoothing */
+
+*, *::before, *::after
+{
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+
+/* main scrollbar */
+
+html
+{
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+
+
+/* killing 300ms touch delay */
+
+html
+{
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+}
+
+
+
+/* svg */
+
+svg
+{
+	fill: currentColor;
+	vertical-align: middle;
+	pointer-events: none;
+}
+
+
+
+/* list */
+
+ul,
+ol
+{
+	list-style: none;
+}
+
+
+
+/* text */
+
+em
+{
+	font-style: italic;
+}
+
+b
+{
+	font-weight: inherit;
+}
+
+i
+{
+	font-style: inherit;
+}
+
+ins
+{
+	text-decoration: none;
+}
+
+
+
+/* form */
+
+input,
+textarea,
+select
+{
+	border-radius: 0;
+	border: none;
+}
+
+select:-moz-focusring 
+{
+    text-shadow: 0 0 0 #000;
+	color: transparent;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='number'],
+input[type='search'],
+input[type='tel'],
+input[type='url'],
+textarea,
+select
+{
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+{
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input::-ms-reveal	{ display: none; }
+input::-ms-clear	{ display: none; }
+
+button,
+input[type='submit']
+{
+	border: none;
+	background-color: transparent;
+}
+/*new file*/
+		body
+		{
+			background-color: #f7efeb;
+			padding: 1.25em; /* 20 */
+		}
+
+		#nav
+		{
+			width: 60em; /* 1000 */
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 400;
+			position: absolute;
+			top: 25%;
+			left: 50%;
+			margin-left: -30em; /* 30 480 */
+		}
+
+			#nav > a
+			{
+				display: none;
+			}
+
+			#nav li
+			{
+				position: relative;
+			}
+				#nav li a
+				{
+					color: #fff;
+					display: block;
+				}
+				#nav li a:active
+				{
+					background-color: #c00 !important;
+				}
+
+			#nav span:after
+			{
+				width: 0;
+				height: 0;
+				border: 0.313em solid transparent; /* 5 */
+				border-bottom: none;
+				border-top-color: #efa585;
+				content: '';
+				vertical-align: middle;
+				display: inline-block;
+				position: relative;
+				right: -0.313em; /* 5 */
+			}
+
+			/* first level */
+
+			#nav > ul
+			{
+				height: 3.75em; /* 60 */
+				background-color: #e15a1f;
+			}
+				#nav > ul > li
+				{
+					width: 25%;
+					height: 100%;
+					float: left;
+				}
+					#nav > ul > li > a
+					{
+						height: 100%;
+						font-size: 1.5em; /* 24 */
+						line-height: 2.5em; /* 60 (24) */
+						text-align: center;
+					}
+						#nav > ul > li:not( :last-child ) > a
+						{
+							border-right: 1px solid #cc470d;
+						}
+						#nav > ul > li:hover > a,
+						#nav > ul:not( :hover ) > li.active > a
+						{
+							background-color: #cc470d;
+						}
+
+
+				/* second level */
+
+				#nav li ul
+				{
+					background-color: #cc470d;
+					display: none;
+					position: absolute;
+					top: 100%;
+				}
+					#nav li:hover ul
+					{
+						display: block;
+						left: 0;
+						right: 0;
+					}
+						#nav li:not( :first-child ):hover ul
+						{
+							left: -1px;
+						}
+						#nav li ul a
+						{
+							font-size: 1.25em; /* 20 */
+							border-top: 1px solid #e15a1f;
+							padding: 0.75em; /* 15 (20) */
+						}
+							#nav li ul li a:hover,
+							#nav li ul:not( :hover ) li.active a
+							{
+								background-color: #e15a1f;
+							}
+
+
+		@media only screen and ( max-width: 62.5em ) /* 1000 */
+		{
+			#nav
+			{
+				width: 100%;
+				position: static;
+				margin: 0;
+			}
+		}
+
+		@media only screen and ( max-width: 40em ) /* 640 */
+		{
+			html
+			{
+				font-size: 75%; /* 12 */
+			}
+
+			#nav
+			{
+				position: relative;
+				top: auto;
+				left: auto;
+			}
+				#nav > a
+				{
+					width: 3.125em; /* 50 */
+					height: 3.125em; /* 50 */
+					text-align: left;
+					text-indent: -9999px;
+					background-color: #e15a1f;
+					position: relative;
+				}
+					#nav > a:before,
+					#nav > a:after
+					{
+						position: absolute;
+						border: 2px solid #fff;
+						top: 35%;
+						left: 25%;
+						right: 25%;
+						content: '';
+					}
+					#nav > a:after
+					{
+						top: 60%;
+					}
+
+				#nav:not( :target ) > a:first-of-type,
+				#nav:target > a:last-of-type
+				{
+					display: block;
+				}
+
+
+			/* first level */
+
+			#nav > ul
+			{
+				height: auto;
+				display: none;
+				position: absolute;
+				left: 0;
+				right: 0;
+			}
+				#nav:target > ul
+				{
+					display: block;
+				}
+				#nav > ul > li
+				{
+					width: 100%;
+					float: none;
+				}
+					#nav > ul > li > a
+					{
+						height: auto;
+						text-align: left;
+						padding: 0 0.833em; /* 20 (24) */
+					}
+						#nav > ul > li:not( :last-child ) > a
+						{
+							border-right: none;
+							border-bottom: 1px solid #cc470d;
+						}
+
+
+				/* second level */
+
+				#nav li ul
+				{
+					position: static;
+					padding: 1.25em; /* 20 */
+					padding-top: 0;
+				}
+		}
+#nav
+{
+    /* container */
+}
+    #nav > a
+    {
+        display: none;
+    }
+    #nav li
+    {
+        position: relative;
+    }
+ 
+    /* first level */
+ 
+    #nav > ul
+    {
+        height: 3.75em;
+    }
+        #nav > ul > li
+        {
+            width: 25%;
+            height: 100%;
+            float: left;
+        }
+ 
+    /* second level */
+ 
+    #nav li ul
+    {
+        display: none;
+        position: absolute;
+        top: 100%;
+    }
+        #nav li:hover ul
+        {
+            display: block;
+        }
+        @media only screen and ( max-width: 40em ) /* 640 */
+{
+    #nav
+    {
+        position: relative;
+    }
+        #nav > a
+        {
+        }
+        #nav:not( :target ) > a:first-of-type,
+        #nav:target > a:last-of-type
+        {
+            display: block;
+        }
+ 
+    /* first level */
+ 
+    #nav > ul
+    {
+        height: auto;
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+        #nav:target > ul
+        {
+            display: block;
+        }
+        #nav > ul > li
+        {
+            width: 100%;
+            float: none;
+        }
+ 
+    /* second level */
+ 
+    #nav li ul
+    {
+        position: static;
+    }
+}
+</style>
+</head>
+<body>
+<nav id="nav" role="navigation">
+    <a href="#nav" title="Show navigation">Show navigation</a>
+    <a href="#" title="Hide navigation">Hide navigation</a>
+    <ul class="navH">
+      <li>
+        <a href="#">Apparel</a>
+
+        <ul>
+          <li>
+            <a  href="#">T-Shirts </a>
+          </li>
+
+          <li>
+            <a  href="#">Outerwear </a>
+          </li>
+
+          <li>
+            <a  href="#">Sweatshirts </a>
+          </li>
+
+          <li>
+            <a  href="#">Hats and Beanies </a>
+          </li>
+
+          <li>
+            <a  href="#">Golf and Polo Shirts </a>
+          </li>
+
+          <li>
+            <a  href="#">Dress Shirts </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Automotive Items</a>
+
+        <ul>
+          <li>
+            <a  href="#">Ice Scrapers </a>
+          </li>
+
+          <li>
+            <a  href="#">Car Emergency Kits </a>
+          </li>
+
+          <li>
+            <a  href="#">Sun Shades </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Bags</a>
+
+        <ul>
+          <li>
+            <a  href="#">Tote Bags </a>
+          </li>
+
+          <li>
+            <a  href="#">Backpacks </a>
+          </li>
+
+          <li>
+            <a  href="#">Duffle and Gym </a>
+          </li>
+
+          <li>
+            <a  href="#">Plastic &amp; Vinyl </a>
+          </li>
+
+          <li>
+            <a  href="#">Paper Bags </a>
+          </li>
+
+          <li>
+            <a  href="#">Briefcases </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Banners, Mats &amp; Signs</a>
+
+        <ul>
+          <li>
+            <a  href="#">Banners </a>
+          </li>
+
+          <li>
+            <a  href="#">Yard Signs </a>
+          </li>
+
+          <li>
+            <a  href="#">Table Covers </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Buttons &amp; Stickers</a>
+
+        <ul>
+          <li>
+            <a  href="#">Bumper Stickers </a>
+          </li>
+
+          <li>
+            <a  href="#">Buttons </a>
+          </li>
+
+          <li>
+            <a  href="#">Decals </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Clocks &amp; Watches</a>
+
+        <ul>
+          <li>
+            <a  href="#">Clocks </a>
+          </li>
+
+          <li>
+            <a  href="#">Watches </a>
+          </li>
+
+          <li>
+            <a  href="#">Stopwatch &amp; Timer </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Corporate Gifts</a>
+
+        <ul>
+          <li>
+            <a  href="#">Awards </a>
+          </li>
+
+          <li>
+            <a  href="#">Tech Gifts </a>
+          </li>
+
+          <li>
+            <a  href="#">Food Gifts </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Desktop &amp; Office Items</a>
+
+        <ul>
+          <li>
+            <a  href="#">Calendars </a>
+          </li>
+
+          <li>
+            <a  href="#">Office Clips </a>
+          </li>
+
+          <li>
+            <a  href="#">Sticky Notes and Flags </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Drinkware</a>
+
+        <ul>
+          <li>
+            <a  href="#">Water Bottles </a>
+          </li>
+
+          <li>
+            <a  href="#">Koozies </a>
+          </li>
+
+          <li>
+            <a  href="#">Plastic Stadium Cups </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Electronics &amp; Computer Items</a>
+
+        <ul>
+          <li>
+            <a  href="#">Cell Phone and Tablet </a>
+          </li>
+
+          <li>
+            <a  href="#">Portable Chargers </a>
+          </li>
+
+          <li>
+            <a  href="#">Headphones </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Fans</a>
+
+        <ul>
+          <li>
+            <a  href="#">Paper Hand Fans </a>
+          </li>
+
+          <li>
+            <a  href="#">Plastic Hand Fans </a>
+          </li>
+
+          <li>
+            <a  href="#">Electric Fans </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Flashlights, Knives &amp; Tools</a>
+
+        <ul>
+          <li>
+            <a  href="#">Tape Measures </a>
+          </li>
+
+          <li>
+            <a  href="#">Flashlights </a>
+          </li>
+
+          <li>
+            <a  href="#">Lighters </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Food &amp; Drink</a>
+
+        <ul>
+          <li>
+            <a  href="#">Candy </a>
+          </li>
+
+          <li>
+            <a  href="#">Bottled Water </a>
+          </li>
+
+          <li>
+            <a  href="#">Mints </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Golf Products</a>
+
+        <ul>
+          <li>
+            <a  href="#">Golf Towels </a>
+          </li>
+
+          <li>
+            <a  href="#">Golf Divot Tools </a>
+          </li>
+
+          <li>
+            <a  href="#">Golf Balls </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Household Items</a>
+
+        <ul>
+          <li>
+            <a  href="#">Wine Openers </a>
+          </li>
+
+          <li>
+            <a  href="#">Photo Frames </a>
+          </li>
+
+          <li>
+            <a  href="#">Kitchen Accessories </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Journals, Organizers &amp; Portfolios</a>
+
+        <ul>
+          <li>
+            <a  href="#">Notebooks </a>
+          </li>
+
+          <li>
+            <a  href="#">Folders </a>
+          </li>
+
+          <li>
+            <a  href="#">Portfolios </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Keychains &amp; Key Tags</a>
+
+        <ul>
+          <li>
+            <a  href="#">Flashlight </a>
+          </li>
+
+          <li>
+            <a  href="#">Stress Reliever </a>
+          </li>
+
+          <li>
+            <a  href="#">Carabiner </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Lanyards, Badges &amp; Bracelets</a>
+
+        <ul>
+          <li>
+            <a  href="#">Lanyards </a>
+          </li>
+
+          <li>
+            <a  href="#">Badge Holders </a>
+          </li>
+
+          <li>
+            <a  href="#">Badge Reels </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Magnets</a>
+
+        <ul>
+          <li>
+            <a  href="#">Car and Outdoor </a>
+          </li>
+
+          <li>
+            <a  href="#">Business Card </a>
+          </li>
+
+          <li>
+            <a  href="#">Custom Cut </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Notepads</a>
+
+        <ul>
+          <li>
+            <a  href="#">Adhesive </a>
+          </li>
+
+          <li>
+            <a  href="#">Note Cubes </a>
+          </li>
+
+          <li>
+            <a  href="#">Non-Adhesive </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Outdoor &amp; Sporting Goods</a>
+
+        <ul>
+          <li>
+            <a  href="#">Coolers </a>
+          </li>
+
+          <li>
+            <a  href="#">Umbrellas </a>
+          </li>
+
+          <li>
+            <a  href="#">Sunglasses </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Party Supplies, Toys &amp; Games</a>
+
+        <ul>
+          <li>
+            <a  href="#">Poker Chips </a>
+          </li>
+
+          <li>
+            <a  href="#">Balloons </a>
+          </li>
+
+          <li>
+            <a  href="#">Temporary Tattoos </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">School &amp; Spirit Items</a>
+
+        <ul>
+          <li>
+            <a  href="#">Pennants </a>
+          </li>
+
+          <li>
+            <a  href="#">Spirit Towels </a>
+          </li>
+
+          <li>
+            <a  href="#">Seat Cushions </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Stress Balls</a>
+
+        <ul>
+          <li>
+            <a  href="#">Round and Shaped </a>
+          </li>
+
+          <li>
+            <a  href="#">Sport and Outdoor </a>
+          </li>
+
+          <li>
+            <a  href="#">Patriotic and State </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Travel &amp; Personal Care Items</a>
+
+        <ul>
+          <li>
+            <a  href="#">First Aid Kits </a>
+          </li>
+
+          <li>
+            <a  href="#">Hand Sanitizer </a>
+          </li>
+
+          <li>
+            <a  href="#">Lip Balm </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Writing Instruments</a>
+
+        <ul>
+          <li>
+            <a  href="#">Pens </a>
+          </li>
+
+          <li>
+            <a  href="#">Stylus Pens </a>
+          </li>
+
+          <li>
+            <a  href="#">Pencils </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+</nav>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="doubletaptogo.js"></script>
+<script>
+	$( function()
+	{
+		$( '#nav li:has(ul)' ).doubleTapToGo();
+	});
+</script>
+<script src="javascripts/nav-priority-util.js"></script>
+<script src="javascripts/nav-priority.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+  var bs = BreakpointSwitcher.create({
+    '768px': function(enter) {
+      if (enter) {
+        window.navPriority('[data-nav="priority-1"]', {
+          containerSelector: null,
+          containerWidthOffset: 70,
+        });
+
+        window.navPriority('[data-nav="priority-2"]', {
+          containerSelector: null,
+          containerWidthOffset: 70,
+        });
+      }
+      else {
+        window.navPriority('[data-nav="priority-1"]', 'destroy');
+        window.navPriority('[data-nav="priority-2"]', 'destroy');
+      }
+    }
+  });
+
+  });
+
+
+  </script>
+</body>
+</html>
