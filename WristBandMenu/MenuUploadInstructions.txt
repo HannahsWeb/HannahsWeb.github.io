@@ -1,0 +1,32 @@
+<!--Add the stylesheet below to all pages that will be using the menu -->
+<link rel="stylesheet" href="WristBandMenu.css">
+
+<!--Add the HTML contents from 'menu.html' into the page html where you want the menu to appear -->
+
+<!-- Add the javascript below to the bottom of any pages using the menu -->
+<script src="nav-priority.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+  var bs = BreakpointSwitcher.create({
+    '768px': function(enter) {
+      if (enter) {
+        window.navPriority('[data-nav="priority-1"]', {
+          containerSelector: null,
+          containerWidthOffset: 70,
+        });
+  window.navPriority('[data-nav="priority-2"]', {
+          containerSelector: null,
+          containerWidthOffset: 70,
+        });
+      }
+      else {
+        window.navPriority('[data-nav="priority-1"]', 'destroy');
+        window.navPriority('[data-nav="priority-2"]', 'destroy');
+      }
+    }
+  });
+
+});
+
+</script>
