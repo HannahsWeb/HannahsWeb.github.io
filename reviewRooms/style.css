@@ -1,0 +1,572 @@
+
+@font-face {
+    font-family: 'League Spartan';
+    src: url('fonts/leaguespartan-bold.eot');
+    src: url('fonts/leaguespartan-bold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/leaguespartan-bold.woff2') format('woff2'),
+         url('fonts/leaguespartan-bold.woff') format('woff'),
+         url('fonts/leaguespartan-bold.ttf') format('truetype'),
+         url('fonts/leaguespartan-bold.svg#league_spartanbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Chunkfive';
+    src: url('fonts/Chunkfive-webfont.eot');
+    src: url('fonts/Chunkfive-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Chunkfive-webfont') format('woff'),
+         url('fonts/Chunkfive-webfont.ttf') format('truetype'),
+         url('fonts/Chunkfive-webfont.svg#Chunkfive-webfont') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+.alignbox {
+	margin-left: -1em;
+	position: absolute; 
+	right: 0;
+}
+
+.rating {
+    overflow: hidden;
+    display: inline-block;
+	margin-left: 35px;
+}
+
+.rating-input {
+    float: right;
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    margin: 0 0 0 0;
+    opacity: 0;
+}
+
+.rating:hover .rating-star:hover,
+.rating:hover .rating-star:hover ~ .rating-star,
+.rating-input:checked ~ .rating-star {
+    background: url('yellowstar.png') 0 -40px;
+}
+
+.rating-star,
+.rating:hover .rating-star {
+	float: right;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: url('whitestar.png') 0 0;
+}
+
+
+/*h2:after {
+    content: '';
+    display: inline-block;
+    height: 3px;
+    background: #000;
+    max-width: 60%;
+	min-width: 50%;
+    float: right;
+    margin-top: 15px;
+}*/
+
+body {
+	font-family: 'League Spartan', sans-serif;
+	margin: 0px;
+	min-width: 560px;
+}
+
+
+.ratingLabel {
+display: block;
+margin-bottom: 5px;
+}
+
+.returnedRating {
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	margin: 0 1px;
+}
+
+.roomRatingStars .returnedRating {
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	margin: 0 1px;
+}
+
+.btn-style{
+	border : solid 2px #ffffff;
+	border-radius : 3px;
+	moz-border-radius : 3px;
+	-webkit-box-shadow : 0px 0px 5px rgba(0,0,0,1.0);
+	-moz-box-shadow : 0px 0px 5px rgba(0,0,0,1.0);
+	box-shadow : 0px 0px 5px rgba(0,0,0,1.0);
+	font-size : 20px;
+	color : #ffffff;
+	padding : 1px 10px;
+	background : #000000;
+	 );
+
+}
+
+.ratingbox {
+	display: block;
+}
+
+.individualReview {    
+margin: 20px 0 0 0;
+    padding-bottom: 20px;
+    clear: both;
+    border-bottom: 1px solid black;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.reviewLeft, .reviewRight {
+	min-width: 48%;
+	max-width: 48%;
+	padding: 1%;
+	float: left;
+}
+
+.pageContent {
+	width: 80%;
+	margin: 10px auto 50px;
+}
+.reviewForm {
+	clear: both;
+}
+
+.leftCol {
+	width: 50%;
+	float: left;
+}
+
+.rightCol {
+	width: 50%;
+	float: left;
+}
+.displayStars {
+	float:right;
+}
+.ratingbox, starratingbox {
+	float: left;
+}
+
+.roomstats {
+	width: 59%;
+	padding-right: 1%;
+}
+.roomImg {
+	width: 38%;
+	padding: 1%;
+	float: right;
+}
+
+img {
+	max-width: 100%;
+}
+
+.largeRatingLabel {
+	font-size: 20px;
+}
+.medRatingLabel {
+	font-size: 20px;
+}
+
+
+.table{
+  display: table;
+  width:100%;
+  border-collapse:collapse;
+}
+.table-row{
+    display: table-row;
+}
+.table-cell{
+      display: table-cell;
+      padding:0.5em;
+	  vertical-align: middle;
+ }
+ 
+ .table-cell .table-cell, .rightcol .table-cell{
+      border-top:#f0f0f0 1px solid;
+	  border-bottom:#f0f0f0 1px solid;
+ }
+   
+	
+.card {
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  margin: 1rem;
+  position: relative;
+}
+
+.card-3 {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.radioQuestionSelection {
+	margin: 20px 0;
+}
+
+.headerBar {
+	background-color: black;
+	height: 200px;
+	width: 100%;
+	margin: 0px;
+}
+
+.topper {
+	    
+  background-color: black;
+  color: white;
+  vertical-align: middle;
+  background-image: url('img/tile1.jpg');
+  -webkit-filter: contrast(1);
+  filter: contrast(1);
+  height:10px;
+}
+.header.shadow {
+	-webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  background-color: #1E1E1E;
+  color: white;
+  vertical-align: middle;
+}
+
+.header .container {
+	width:80%;
+	margin: 0 auto;
+	vertical-align: middle;
+	padding: 15px 0;
+
+}
+
+textarea {
+	width: 80%;
+	height: 300px;
+	border: 2px solid #000;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+	resize: none;
+	border-radius: 2px;
+}
+
+.submit {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 7.5em;
+  margin-top: -2em;
+  margin-left: -20%;
+  height: 2em;
+  cursor: pointer;
+  border: 2px solid;
+  -webkit-border-radius: 40px;
+  border-radius: 40px;
+  font: normal 2em "Advent Pro", Helvetica, sans-serif;
+  color: rgba(0,0,0,1);
+  text-align: center;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  letter-spacing: 1px;
+  background: rgba(0,0,0,0);
+  -webkit-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+  -moz-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+  -o-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+  transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+}
+
+.submit:hover {
+  color: rgba(255,255,255,1);
+  background: rgba(0,0,0,1);
+}
+
+.submit:active {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+.starcontainer, .chartFigure {
+	max-width:50%;
+	
+}
+
+.starcontainer {
+	float: left;
+}
+.chartFigure {
+	float: right;
+}
+//chart css
+
+.chart-text {
+  /*font: 16px/1.4em "Montserrat", Arial, sans-serif;*/
+  fill: #000;
+  -moz-transform: translateY(0.25em);
+  -ms-transform: translateY(0.25em);
+  -webkit-transform: translateY(0.25em);
+  transform: translateY(0.25em);
+}
+.chart-number {
+  font-size: 0.6em;
+  line-height: 1;
+  text-anchor: middle;
+  -moz-transform: translateY(-0.25em);
+  -ms-transform: translateY(-0.25em);
+  -webkit-transform: translateY(-0.25em);
+  transform: translateY(-0.25em);
+}
+.chart-label {
+  font-size: 0.2em;
+  text-transform: uppercase;
+  text-anchor: middle;
+  -moz-transform: translateY(0.7em);
+  -ms-transform: translateY(0.7em);
+  -webkit-transform: translateY(0.7em);
+  transform: translateY(0.7em);
+}
+figure {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+@media (min-width: 768px) {
+  figure {
+    flex-direction: row;
+  }
+}
+.figure-content,
+.figure-key {
+  flex: 1;
+  padding-left: 15px;
+  padding-right: 15px;
+  align-self: center;
+}
+.figure-content svg {
+  height: auto;
+}
+.figure-key {
+  min-width: calc(8 / 12);
+}
+.figure-key [class*="shape-"] {
+  margin-right: 6px;
+}
+.figure-key-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.figure-key-list li {
+  margin: 0 0 8px;
+  padding: 0;
+}
+.shape-circle {
+  display: inline-block;
+  vertical-align: middle;
+  width: 32px;
+  height: 32px;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+}
+.shape-fuschia {
+  background-color: #B1C94E;
+}
+.shape-lemon-lime {
+  background-color: #FFBC05;
+}
+.shape-blue {
+  background-color: #EA4335;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.ratingbox {
+	width: 400px;
+}
+@media (max-width: 1250px) {
+	.pageContent, .header .container {
+		width: 90%;
+	}
+}
+
+@media (max-width: 1100px) {
+	
+	.table-cell, .individualReview .table-cell .table-cell {
+		display: table-cell;
+	}
+	.individualReview .table-cell{
+		display: block;
+	}
+	.ratingbox {
+	max-width: 100%;
+    margin: 0 auto;
+    float: none;
+    margin-top: 50px;
+	}
+	.chartFigure, .starcontainer {
+	margin-left: auto;
+	margin-right: auto;
+    width: 80%;
+    max-width: 412px;
+	float: none;
+	}
+	.roomabout, .individualReview, .mainReviewLabel {
+    margin-left: auto;
+	margin-right: auto;
+    width: 90%;
+	float: none;
+	}
+	.chartFigure {
+		border: 1px solid black;
+	}
+	.pageContent {
+		padding-top: 20px;
+		background-color: white;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		padding-bottom: 50px;
+	}
+	.roomstats {
+		width: 100%;
+	}
+	body {
+		background-color: #DEDEFF;
+	}
+
+	.header {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+
+.header, .pagecontent
+{
+    position:relative;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.header:before, .header:after, .pagecontent:before, .pagecontent:after
+{
+    content:"";
+    position:absolute; 
+    z-index:-1;
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    top:10px;
+    bottom:10px;
+    left:0;
+    right:0;
+    border-radius:100px / 10px;
+} 
+.pagecontent:after, .header:after
+{
+    right:10px; 
+    left:auto; 
+    transform:skew(8deg) rotate(3deg);
+}  
+
+.individualReview > .table-row .table-cell {
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+.leftCol, .rightCol {
+	float:none;
+	width: auto;
+}
+.submit {
+	margin-top: 0px;
+	margin-left: 0px;
+}
+
+.alignbox {
+	margin-left: 0;
+	position: relative; 
+	right: 0;
+	width: 100%;
+	text-align: center;
+}
+
+}
+@media (max-width: 610px) {
+.roomRatingStars .returnedRating, .rating-star {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    margin: 0 1px;
+}
+.starcontainer, .rightCol {
+    max-width: 362px;
+	float: none;
+	}
+
+.rating:hover .rating-star:hover,
+.rating:hover .rating-star:hover ~ .rating-star,
+.rating-input:checked ~ .rating-star {
+    background: url('yellowstar.png') 0 0spx;
+	background-size: 30px 30px;
+}
+
+.rating-star,
+.rating:hover .rating-star {
+	float: right;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url('whitestar.png') 0 0;
+	background-size: 30px 30px;
+}
+.rating-input {
+	width: 1px;
+}
+
+.leftCol, .rightCol {
+	max-width: 410px;
+	margin: 0 auto;
+}
+textarea {
+	width: 100%;
+	margin: 0px auto;
+	margin-bottom: 30px;
+}
+
+
+}
+
+@media and (max-width: 930px) {
+	
+	.leftCol {
+	width: 100%;
+}
+
+.rightCol {
+	width: 100%
+}
+
+}

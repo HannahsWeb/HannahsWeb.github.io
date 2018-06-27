@@ -1,0 +1,472 @@
+
+
+<!--Actual Post Form in HTML - very basic-->
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css"> 
+<link rel="stylesheet" type="text/css" href="donutchart.css"> 
+</head>
+<body>
+<symbol id="icon-star-full" viewBox="0 0 32 32">
+<title>star-full</title>
+<path d="M32 12.408l-11.056-1.607-4.944-10.018-4.944 10.018-11.056 1.607 8 7.798-1.889 11.011 9.889-5.199 9.889 5.199-1.889-11.011 8-7.798z"></path>
+</symbol>
+<header class="header shadow">
+  <div class="container">
+    <div class="logo">
+      <h1>Escape Review Logo</h1>
+    </div>
+  </div>
+</header>
+
+<div class='pageContent clearfix'>
+
+
+<div class="roomAbout clearfix">
+<div class="roomImg">
+<img class='roomPhoto card card-3' src="img/2.jpg" /></div>
+<div class="roomstats">
+<h1> High School Dention</h1>
+<h2>Company: Super Escapes</h2>
+<h3>Las Vegas, NV 12345</h3>
+<p>pretendsitemysuperescapes4you.com</p>
+<p>In this escape room, you will race to beat the clock as a student stuck in detention who needs to find a way to change your grades before the principle finds out!</p>
+</div>
+
+</div>
+
+
+
+
+<div class='clearfix'><div class='starcontainer'><div class='table-row roomRatingStars'>
+		<div class='table-cell'><span class='largeRatingLabel'>Overall:</span></div><div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='4 out of 5 stars' /><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/></div></div><div class='table-row roomRatingStars'>
+		<div class='table-cell'><span class='largeRatingLabel'>Room:</span></div><div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='2 out of 5 stars' /><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/></div></div><div class='table-row roomRatingStars'>
+		<div class='table-cell'><span class='largeRatingLabel'>Puzzles:</span></div><div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='4 out of 5 stars' /><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/></div></div><div class='table-row roomRatingStars'>
+		<div class='table-cell'><span class='largeRatingLabel'>Parallelizability:</span></div><div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='4 out of 5 stars' /><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/></div></div></div><style>
+.chart-text {
+  /*font: 16px/1.4em "Montserrat", Arial, sans-serif;*/
+  fill: #000;
+  -moz-transform: translateY(0.25em);
+  -ms-transform: translateY(0.25em);
+  -webkit-transform: translateY(0.25em);
+  transform: translateY(0.25em);
+}
+.chart-number {
+  font-size: 0.6em;
+  line-height: 1;
+  text-anchor: middle;
+  -moz-transform: translateY(-0.25em);
+  -ms-transform: translateY(-0.25em);
+  -webkit-transform: translateY(-0.25em);
+  transform: translateY(-0.25em);
+}
+.chart-label {
+  font-size: 0.2em;
+  text-transform: uppercase;
+  text-anchor: middle;
+  -moz-transform: translateY(0.7em);
+  -ms-transform: translateY(0.7em);
+  -webkit-transform: translateY(0.7em);
+  transform: translateY(0.7em);
+}
+figure {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+@media (min-width: 768px) {
+  figure {
+    flex-direction: row;
+  }
+}
+.figure-content,
+.figure-key {
+  flex: 1;
+  padding-left: 15px;
+  padding-right: 15px;
+  align-self: center;
+}
+.figure-content svg {
+  height: auto;
+}
+.figure-key {
+  min-width: calc(8 / 12);
+}
+.figure-key [class*="shape-"] {
+  margin-right: 6px;
+}
+.figure-key-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.figure-key-list li {
+  margin: 0 0 8px;
+  padding: 0;
+}
+.shape-circle {
+  display: inline-block;
+  vertical-align: middle;
+  width: 32px;
+  height: 32px;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+}
+.shape-fuschia {
+  background-color: #B1C94E;
+}
+.shape-lemon-lime {
+  background-color: #FFBC05;
+}
+.shape-blue {
+  background-color: #EA4335;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+</style>
+
+<figure class="chartFigure">
+  <div class="figure-content">
+    <svg width="100%" height="100%" viewBox="0 0 42 42" class="donut" aria-labelledby="esc-att-title esc-att-desc" role="img">
+      <title id="esc-att-title">Successfull Escape Percentages</title>
+      <desc id="esc-att-desc"></desc>
+      <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#fff" role="presentation"></circle>
+      <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="white" stroke-width="3" role="presentation"></circle>
+
+      <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#B1C94E" stroke-width="3" stroke-dasharray="29 71" stroke-dashoffset="25" aria-labelledby="donut-segment-1-title donut-segment-1-desc">
+        <title id="donut-segment-1-title">Yes</title>
+        <desc id="donut-segment-1-desc">2 out of 7 users experienced a successful escape.</desc>
+      </circle>
+      <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#FFBC05" stroke-width="3" stroke-dasharray="43 57" stroke-dashoffset="96">
+        <title id="donut-segment-2-title">Yes, with hints</title>
+        <desc id="donut-segment-2-desc">3 out of 7 players experienced a successful escape with the help of hints.</desc>
+      </circle>
+      <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#EA4335" stroke-width="3" stroke-dasharray="29 71" stroke-dashoffset="153">
+        <title id="donut-segment-3-title">No</title>
+        <desc id="donut-segment-3-desc">2 out of 7 players did not experience a successful escape.</desc>
+      </circle>
+      <!-- unused 10% -->
+      <g class="chart-text">
+        <text x="50%" y="50%" class="chart-number">
+          7
+        </text>
+        <text x="50%" y="50%" class="chart-label">
+          attempts
+        </text>
+      </g>
+    </svg>
+  </div>
+  <figcaption class="figure-key">
+    <p class="sr-only">Donut chart showing seven total escape attempts. Two escapes attempts were successful, three escape attempts were successful with hints, and two escape attempts were unsuccessful.</p>
+
+    <ul class="figure-key-list" aria-hidden="true" role="presentation">
+      <li>
+        <span class="shape-circle shape-fuschia"></span> Yes (2)
+      </li>
+      <li>
+        <span class="shape-circle shape-lemon-lime"></span> Yes, with hints (3)
+      </li>
+      <li>
+        <span class="shape-circle shape-blue"></span> No (2)
+      </li>
+    </ul>
+  </figcaption>
+</figure>
+</div><h1 class='mainReviewLabel'>Reviews:</h1><div class='individualReview'>
+		<div class='table-row'>
+		<div class='table-cell reviewContent'>This was so much fun! I want to bring all of my friends here next time and see how fast they can figure out the clues!!&nbsp;</div>
+		<div class='table-cell'>
+		<div class='ratingbox'>
+		<div class='table-row'>
+		<div class='table-cell'><span class='medRatingLabel'>Successfull escape?</span></div>
+		<div class='table-cell'> Yes, with hints</div></div>
+		<div class='table-row'>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Overall:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='5 out of 5 stars' /><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/></div></div>
+		<div class='table-row'>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Puzzles:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='5 out of 5 stars' /><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/></div></div>
+		<div class='table-row'>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Room:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='4 out of 5 stars' /><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/></div></div>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Parallelizability:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='5 out of 5 stars' /><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/></div></div></div></div></div><div class='individualReview'>
+		<div class='table-row'>
+		<div class='table-cell reviewContent'>Honestly, I thought the room itself seemed really run down. It did not seem like they put a lot of effort into the upkeep. 
+
+But then I actually started solving the puzzles, and I have to say - now I know were all the effort went! The puzzles are so fantastic - very challenging but with very clever solutions. It totally is my new favorite room. Even if the room itself is a little dingy.&nbsp;</div>
+		<div class='table-cell'>
+		<div class='ratingbox'>
+		<div class='table-row'>
+		<div class='table-cell'><span class='medRatingLabel'>Successfull escape?</span></div>
+		<div class='table-cell'> Yes, with hints</div></div>
+		<div class='table-row'>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Overall:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='5 out of 5 stars' /><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/></div></div>
+		<div class='table-row'>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Puzzles:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='5 out of 5 stars' /><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/></div></div>
+		<div class='table-row'>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Room:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='1 out of 5 stars' /><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/></div></div>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Parallelizability:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='5 out of 5 stars' /><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/></div></div></div></div></div><div class='individualReview'>
+		<div class='table-row'>
+		<div class='table-cell reviewContent'>So much fun. This is a good one for kids and adults alike. We were looking for something to do while the kids were on summer vacation and the grandparents were visiting. 
+
+We took a chance on an escape room - and it was a great idea. Two of my children have done several escape rooms before. I and my parents had never been. The new players and the experienced ones all had a blast.&nbsp;</div>
+		<div class='table-cell'>
+		<div class='ratingbox'>
+		<div class='table-row'>
+		<div class='table-cell'><span class='medRatingLabel'>Successfull escape?</span></div>
+		<div class='table-cell'> Yes</div></div>
+		<div class='table-row'>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Overall:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='5 out of 5 stars' /><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/></div></div>
+		<div class='table-row'>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Puzzles:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='5 out of 5 stars' /><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/></div></div>
+		<div class='table-row'>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Room:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='2 out of 5 stars' /><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/></div></div>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Parallelizability:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='5 out of 5 stars' /><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/></div></div></div></div></div><div class='individualReview'>
+		<div class='table-row'>
+		<div class='table-cell reviewContent'>Lovvvvvvvvvvvvvvvvvved it!!!!!!!!!!! 
+
+Try to beat my score 41:30 -- way under the 60 minute limit! Oh yay!&nbsp;</div>
+		<div class='table-cell'>
+		<div class='ratingbox'>
+		<div class='table-row'>
+		<div class='table-cell'><span class='medRatingLabel'>Successfull escape?</span></div>
+		<div class='table-cell'> Yes</div></div>
+		<div class='table-row'>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Overall:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='5 out of 5 stars' /><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/></div></div>
+		<div class='table-row'>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Puzzles:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='5 out of 5 stars' /><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/></div></div>
+		<div class='table-row'>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Room:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='3 out of 5 stars' />
+<img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/></div></div>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Parallelizability:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='5 out of 5 stars' /><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/></div></div></div></div></div><div class='individualReview'>
+		<div class='table-row'>
+		<div class='table-cell reviewContent'>Great room. I would give it 10 stars if I could! The guide was great - she understood that we did not want extra hints, but was always available when needed. The theme was a bit unique and I enjoyed it. There were some easter eggs that we caught in the decor, a few allusions to my favorite movie, The Breakfast Club. Want to play it again just to see if we can pick up on anything else the designers hid in the room!&nbsp;</div>
+		<div class='table-cell'>
+		<div class='ratingbox'>
+		<div class='table-row'>
+		<div class='table-cell'><span class='medRatingLabel'>Successfull escape?</span></div>
+		<div class='table-cell'> Yes, with hints</div></div>
+		<div class='table-row'>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Overall:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='5 out of 5 stars' /><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/></div></div>
+		<div class='table-row'>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Puzzles:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='5 out of 5 stars' /><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/></div></div>
+		<div class='table-row'>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Room:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='5 out of 5 stars' /><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/></div></div>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Parallelizability:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='5 out of 5 stars' /><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/><img class='returnedRating' src='yellowstar.png' alt=''/></div></div></div></div></div><div class='individualReview'>
+		<div class='table-row'>
+		<div class='table-cell reviewContent'>Waste of money! We called ahead to book a room for a birthday party. My son was super excited, as all his friends at school have been talking about the escape games they have gone to.
+
+So I made an investment to give my son a good birthday, $$$ for all the friends he wanted to join him.
+
+We called ahead and paid by phone, with a reservation locked in. You would think that means you can go in when your reservation is. Instead, they made us wait an hour and a half, but would not let us cancel and refund our money. Birthday ruined!&nbsp;</div>
+		<div class='table-cell'>
+		<div class='ratingbox'>
+		<div class='table-row'>
+		<div class='table-cell'><span class='medRatingLabel'>Successfull escape?</span></div>
+		<div class='table-cell'> No</div></div>
+		<div class='table-row'>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Overall:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='1 out of 5 stars' /><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/></div></div>
+		<div class='table-row'>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Puzzles:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='1 out of 5 stars' /><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/></div></div>
+		<div class='table-row'>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Room:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='1 out of 5 stars' /><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/></div></div>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Parallelizability:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='1 out of 5 stars' /><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/></div></div></div></div></div><div class='individualReview'>
+		<div class='table-row'>
+		<div class='table-cell reviewContent'>This room was really hard. I only completed one puzzle and from what I understand their were 15 needed to escape! I appreciate a challenge, but this was seriously impossible. I will read the difficulty reviews before I try another escape room. Was not much fun, I guess it might be if you were some kind of a genius.&nbsp;</div>
+		<div class='table-cell'>
+		<div class='ratingbox'>
+		<div class='table-row'>
+		<div class='table-cell'><span class='medRatingLabel'>Successfull escape?</span></div>
+		<div class='table-cell'> No</div></div>
+		<div class='table-row'>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Overall:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='1 out of 5 stars' /><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/></div></div>
+		<div class='table-row'>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Puzzles:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='1 out of 5 stars' /><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/></div></div>
+		<div class='table-row'>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Room:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='1 out of 5 stars' /><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/></div></div>
+		<div class='table-cell'>
+		<span class='medRatingLabel'>Parallelizability:</span></div>
+		<div class='table-cell'><img class='returnedRating' src='yellowstar.png' alt='1 out of 5 stars' /><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/><img class='returnedRating' src='whitestar.png' alt=''/></div></div></div></div></div>		
+		
+<!--Review Form-->
+<div class='reviewForm clearfix mainReviewLabel'>
+<a id="LeaveAReview"></a>
+<h2 class="formLabel">Leave a review:</h2>
+<form method="post" style="position: relative; right: 0; width: auto;" action="/demo/ReviewForm.php"> 
+
+<div class="clearfix">
+
+<div class="leftCol">
+		<span class="ratingLabel largeRatingLabel">Did you escape successfully?</span> 
+		<div class='radioQuestionSelection'>
+    <input type="radio" class="success-rate" id="success-rate-1-yes" name="success-rate-1" value="yes">
+    <label for="success-rate-1-yes" class="success-rate">Yes</label>
+    <input type="radio" class="success-rate" id="success-rate-1-hints" name="success-rate-1" value="hints">
+    <label for="success-rate-1-hints" class="success-rate">Yes, with hints</label>
+    <input type="radio" class="success-rate" id="success-rate-1-no" name="success-rate-1" value="no">
+    <label for="success-rate-1-no" class="success-rate">No</label>
+</div>
+			<span class="ratingLabel largeRatingLabel">What did you think of this escape room?</span><br />
+			<textarea name="review_content"></textarea>
+</div>
+<div class="rightCol">
+	<div class='table-row'>
+		<div class='table-cell'>
+			<span class="ratingLabel largeRatingLabel">Puzzles:</span> 
+		</div>
+		<div class='table-cell'>
+			<span class="rating">
+    <input type="radio" class="rating-input" id="puzzles-rating-input-1-5" name="puzzles-rating-input-1" value="5">
+    <label for="puzzles-rating-input-1-5" class="rating-star"></label>
+    <input type="radio" class="rating-input" id="puzzles-rating-input-1-4" name="puzzles-rating-input-1" value="4">
+    <label for="puzzles-rating-input-1-4" class="rating-star"></label>
+    <input type="radio" class="rating-input" id="puzzles-rating-input-1-3" name="puzzles-rating-input-1" value="3">
+    <label for="puzzles-rating-input-1-3" class="rating-star"></label>
+    <input type="radio" class="rating-input" id="puzzles-rating-input-1-2" name="puzzles-rating-input-1" value="2">
+    <label for="puzzles-rating-input-1-2" class="rating-star"></label>
+    <input type="radio" class="rating-input" id="puzzles-rating-input-1-1" name="puzzles-rating-input-1" value="1">
+    <label for="puzzles-rating-input-1-1" class="rating-star"></label>
+</span>
+	</div>
+</div>
+<div class='table-row'>
+	<div class='table-cell'>
+			<span class="ratingLabel largeRatingLabel">Room:</span>
+	</div>
+	<div class='table-cell'>
+			<span class="rating">
+    <input type="radio" class="rating-input" id="room-rating-input-1-5" name="room-rating-input-1" value="5">
+    <label for="room-rating-input-1-5" class="rating-star"></label>
+    <input type="radio" class="rating-input" id="room-rating-input-1-4" name="room-rating-input-1" value="4">
+    <label for="room-rating-input-1-4" class="rating-star"></label>
+    <input type="radio" class="rating-input" id="room-rating-input-1-3" name="room-rating-input-1" value="3">
+    <label for="room-rating-input-1-3" class="rating-star"></label>
+    <input type="radio" class="rating-input" id="room-rating-input-1-2" name="room-rating-input-1" value="2">
+    <label for="room-rating-input-1-2" class="rating-star"></label>
+    <input type="radio" class="rating-input" id="room-rating-input-1-1" name="room-rating-input-1" value="1">
+    <label for="room-rating-input-1-1" class="rating-star"></label>
+</span>
+</div>
+</div>
+<div class='table-row'>
+<div class='table-cell'>			
+						<span class="ratingLabel largeRatingLabel">Parallelizability:</span>
+						</div>
+						<div class='table-cell'>
+			<span class="rating">
+    <input type="radio" class="rating-input" id="parallelizability-rating-input-1-5" name="parallelizability-rating-input-1" value="5">
+    <label for="parallelizability-rating-input-1-5" class="rating-star"></label>
+    <input type="radio" class="rating-input" id="parallelizability-rating-input-1-4" name="parallelizability-rating-input-1" value="4">
+    <label for="parallelizability-rating-input-1-4" class="rating-star"></label>
+    <input type="radio" class="rating-input" id="parallelizability-rating-input-1-3" name="parallelizability-rating-input-1" value="3">
+    <label for="parallelizability-rating-input-1-3" class="rating-star"></label>
+    <input type="radio" class="rating-input" id="parallelizability-rating-input-1-2" name="parallelizability-rating-input-1" value="2">
+    <label for="parallelizability-rating-input-1-2" class="rating-star"></label>
+    <input type="radio" class="rating-input" id="parallelizability-rating-input-1-1" name="parallelizability-rating-input-1" value="1">
+    <label for="parallelizability-rating-input-1-1" class="rating-star"></label>
+</span>
+</div>
+</div>
+<div class='table-row'>
+<div class='table-cell'>
+						<span class="ratingLabel largeRatingLabel">Overall:</span>
+						</div>
+						<div class='table-cell'>
+			<span class="rating">
+    <input type="radio" class="rating-input" id="overall-rating-input-1-5" name="overall-rating-input-1" value="5">
+    <label for="overall-rating-input-1-5" class="rating-star"></label>
+    <input type="radio" class="rating-input" id="overall-rating-input-1-4" name="overall-rating-input-1" value="4">
+    <label for="overall-rating-input-1-4" class="rating-star"></label>
+    <input type="radio" class="rating-input" id="overall-rating-input-1-3" name="overall-rating-input-1" value="3">
+    <label for="overall-rating-input-1-3" class="rating-star"></label>
+    <input type="radio" class="rating-input" id="overall-rating-input-1-2" name="overall-rating-input-1" value="2">
+    <label for="overall-rating-input-1-2" class="rating-star"></label>
+    <input type="radio" class="rating-input" id="overall-rating-input-1-1" name="overall-rating-input-1" value="1">
+    <label for="overall-rating-input-1-1" class="rating-star"></label>
+</span>
+</div>
+</div>
+<input type="hidden" name="roomid" id="hiddenField" value="" />
+	
+			<br />
+</div>
+</div>
+<div class="alignbox">
+<input type="hidden" name="action" value="reviewSubmit" />
+<input type="submit" name="submit" class='submit' value="Submit"> 
+</div>
+		
+<br />
+	 
+			
+		
+		</form>
+		</div>
+		</div>
+		</div>
+</body>
+</html>
+<!--close connection - global-->
